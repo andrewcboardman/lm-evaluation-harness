@@ -2,8 +2,8 @@ dataset_path: futurehouse/lab-bench # the name of the dataset on the HF Hub.
 dataset_name: ProtocolQA # the dataset configuration to use. Leave `null` if your dataset does not require a config to be passed. See https://huggingface.co/docs/datasets/load_hub#configurations for more info.
 dataset_kwargs: null # any extra keyword arguments that should be passed to the dataset constructor, e.g. `data_dir`.
 training_split: null
-validation_split: null
-test_split: train
+validation_split: train
+test_split: null
 output_type: multiple_choice
 process_docs: !function utils.process_docs
 doc_to_text: "Protocol: {{protocol}}\nQuestion: {{question}}\nAnswer:"
@@ -11,3 +11,5 @@ doc_to_target: gold
 doc_to_choice: "choices"
 task: lab_bench_protocolqa
 task_alias: protocolqa
+metadata:
+  version: 1.0
