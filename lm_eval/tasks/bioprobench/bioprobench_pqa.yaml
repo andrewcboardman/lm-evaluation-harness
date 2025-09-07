@@ -1,0 +1,15 @@
+dataset_path: andrewcboardman/BioProBench_reformat # the name of the dataset on the HF Hub.
+dataset_name: PQA # the dataset configuration to use. Leave `null` if your dataset does not require a config to be passed. See https://huggingface.co/docs/datasets/load_hub#configurations for more info.
+dataset_kwargs: null # any extra keyword arguments that should be passed to the dataset constructor, e.g. `data_dir`.
+training_split: null
+validation_split: test
+test_split: null
+output_type: multiple_choice
+process_docs: !function utils.generate_prompt_pqa
+doc_to_text: prompt
+doc_to_target: answer
+doc_to_choice: choices
+task: bioprobench_pqa
+task_alias: bpb_pqa
+metadata:
+  version: 1.0
