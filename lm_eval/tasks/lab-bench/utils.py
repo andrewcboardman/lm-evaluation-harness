@@ -6,7 +6,7 @@ def process_docs(dataset: datasets.Dataset) -> datasets.Dataset:
 
         choices = doc["distractors"] + [doc["ideal"]]
         out_doc = {
-            "protocol": doc["protocol"],
+            "protocol": doc["protocol"].strip(),
             "question":doc["question"],
             "choices": choices,
             "gold": int(len(doc["distractors"])),  # always the last one
